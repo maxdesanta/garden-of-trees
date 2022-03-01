@@ -60,7 +60,12 @@ class AppleTree {
          * jika umur pohon lebih kecil dari umur pohon berhenti tumbuh, maka pohon bertambah tinggi secara random
          * tinggi pohon dibulatkan ke bulatan terbesar
         */
-        
+        if (this._age <= this._limitAge ) {
+            const pertumbuhan = Math.ceil(Math.random() * this._height);
+            return this._height + pertumbuhan;
+        } else {
+            console.log('pohon ini sudah mati');
+        }
     }
 
     // produce some fruits
@@ -80,3 +85,6 @@ class AppleTree {
     }
 }
 
+const pohonMangga = new AppleTree('pohon apel', 30, 150, true, 50, 100, 100);
+
+console.log(pohonMangga.grow());
